@@ -9,7 +9,7 @@
 
 ## Configuration:
 - Environment Variables:
-  - `PORT`: Port number the server listens on. Default: 3000
+  - `PORT`: Port number the server listens on. Default: 5000
   - `MONGODB_URI`: URI for MongoDB database.
 
 
@@ -19,4 +19,6 @@
 - `express`: Web framework for Node.js.
 - `mongodb`: MongoDB driver for Node.js.
 - `nodemon`: Utility for automatically restarting the server during development.
+# server link
+https://deshi-shop-server.vercel.app/
 

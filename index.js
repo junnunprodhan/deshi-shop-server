@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const port = 5000;
 require("dotenv").config();
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello World!");
+// });
 
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const uri = process.env.MONGODB_URI;
@@ -46,6 +46,7 @@ async function run() {
       res.send(filter);
     });
 
+
     app.get("/brands/:category", async (req, res) => {
       const category = req.params.category;
       const query = { category: category };
@@ -58,12 +59,19 @@ async function run() {
       "Pinged your deployment. You successfully connected to MongoDB!"
     );
   } finally {
-    // Ensures that the client will close when you finish/error
-    // await client.close();
+  
   }
 }
 run().catch(console.dir);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
+});
+
+app.get('/', (req, res) => {
+  const serverStatus = {
+      message: 'Server is running smoothly',
+      timestamp: new Date()
+  };
+  res.json(serverStatus);
 });
