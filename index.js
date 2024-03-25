@@ -37,6 +37,21 @@ async function run() {
       res.send(result);
     });
 
+    app.get("/flash-sale", async (req, res) => {
+      const falseSale = await productsCollection
+        .find()
+        .sort({ createdAt: 1 })
+        .toArray();
+      const filter = falseSale.filter((flash) => flash.isFlash == true);
+      res.send(filter);
+    });
+
+    app.get("/brands/:category", async (req, res) => {
+      const category = req.params.category;
+      const query = { category: category };
+      const result = await productsCollection.find(query).toArray();
+      res.send(result);
+    });
 
     await client.db("admin").command({ ping: 1 });
     console.log(
