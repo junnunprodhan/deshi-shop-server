@@ -20,5 +20,5 @@
 - `mongodb`: MongoDB driver for Node.js.
 - `nodemon`: Utility for automatically restarting the server during development.
 # server link
-https://deshi-shop-server.vercel.app/
+- `https://deshi-shop-server.vercel.app/
 
